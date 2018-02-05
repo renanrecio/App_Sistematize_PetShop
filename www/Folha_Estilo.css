@@ -73,10 +73,9 @@ border: 0px;
 
 .botao_senha_se_pg_recuperar_senha{
 	
-	position: absolute; 
-	top:50%; 
-	left:20%; 
-	height: 5%; 
+	position: relative; 
+	top:6em;
+	height: 1.75em;  
 	width:60%;  
 	font-weight: bold; 
 	color:white; 
