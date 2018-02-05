@@ -1,36 +1,42 @@
 body
 {
-font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat-Light', sans-serif;
 text-align:center;
 background-color: white;
 background-size: 100%;
 cursor: default;
+font-weight: 250;
 
 	
 }
 
 p, input, span,a,li,placeholder,select,option,td,tr{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat-Light', sans-serif;
+	font-weight: 250;
 }
 
 ::-webkit-input-placeholder {
    color: gray;
    font: 16px 'Montserrat', sans-serif;
+   font-weight: 250;
 }
 
 :-moz-placeholder {
    color: gray;
    font: 16px 'Montserrat', sans-serif;
+   font-weight: 250;
 }
 
 ::-moz-placeholder {
    color: gray;  
    font: 16px 'Montserrat', sans-serif;
+   font-weight: 250;
 }
 
 :-ms-input-placeholder {  
    color: gray;  
    font: 16px 'Montserrat', sans-serif;
+   font-weight: 250;
 }
 
 
