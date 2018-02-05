@@ -25,36 +25,7 @@
 <link rel="stylesheet" type="text/css" href="Folha_Estilo.css" media="screen" />
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-<style>
-body
-{
-	background-color: #fcfcff;
-	background-size: 100%;
 
-}
-</style>
-
-<style>
-
-input,
-textarea {
-    opacity: 0.5;
-    filter: alpha(opacity=50);
-	border:2px solid #797979;
-    background-color: white;
-}
-
-::-webkit-input-placeholder {
-   color: #797979;
-   font: 1em verdana, arial, sans-serif;
-}
-
-:-moz-placeholder {
-   color: #797979;
-   font: 1em verdana, arial, sans-serif;
-}
-
-</style>
 
 
 <title>AcheLoja</title>
@@ -146,23 +117,23 @@ if( (nome_usuario_guardado != '') && (typeof nome_usuario_guardado !== "undefine
 		<center>
 			<img style="position:relative; width:50%; top:2.5em; " src="fotos/logo2.png" />
 			
-			<p style="position:relative;  cursor: pointer; text-decoration:color: #797979; top:2em; width:80%; font-size:1em;" >Pet Shop</p>
+			<p style="position:relative;  cursor: pointer; text-decoration:color: #797979; top:2em; width:80%; font-size:1.25em;" >Pet Shop</p>
 			
 			
 			<form action="">
 					
-					<input id="email" name="email" type="text" style="position: relative; top:3em; height: 1.5em; width:90%;  font-size:1.5em; "   placeholder=" E-mail" />
+					<input  id="email" name="email" type="text" style="position: relative; top:3em; height: 1.5em; width:90%;  font-size:1.5em; "   placeholder=" E-mail" />
 					<input id="senha" name="senha" type="password" style="position: relative; top:3.5em; height: 1.5em; width:90%;  font-size:1.5em; "  placeholder=" Senha" />
 			
 			</form>
 			
-			<input onclick="enviar_dados()" type="submit" style="position: relative; top:4em; height: 1.75em; width:40%; color:white; background-color: #797979; font-size:1.5em; cursor: pointer; border-radius: 25px; opacity: 1; filter: alpha(opacity=100);" Value="Cadastre-se"/>
-			
-			<a href="cadastrar.html" style="text-decoration:none;"><input onclick="enviar_dados()" type="button" style="position: relative; top:4em; height: 1.75em; width:40%;   color:white; background-color: #70913e; font-size:1.5em; cursor: pointer; border-radius: 25px; opacity: 1; filter: alpha(opacity=100);" Value="Entre"/></a>
+			<a href="cadastrar.html" style="text-decoration:none;"><input class="botao_cadastro_login_pg_index" onclick="enviar_dados()" type="button"  Value="Cadastre-se"/></a>
 				
+			<input class="botao_entre_login_pg_index" onclick="enviar_dados()" type="submit" Value="Entre"/>
+			
 			<div style="position: relative; top: 5em; width:100%;">	
 			
-				<a href="recuperar_senha.html" style="text-decoration:none; color: #6b6b6b "><p style="cursor: pointer;  color: #6b6b6b; position: absolute; top:2em; width:80%; left:10%; font-size:1em;" >Esqueci minha senha</p></a>
+				<a href="recuperar_senha.html" style="text-decoration:none; color: #6b6b6b "><p  style="cursor: pointer;  color: #6b6b6b; position: absolute; top:2em; width:80%; left:10%; font-size:1em;" >Esqueci minha senha</p></a>
 			
 				<!--<a href="cadastrar.html" style="text-decoration:none;"><span style="position:absolute; top:6.5em; width:80%; left:10%; color:#0070a1; font-weight: bolder; font-size:1.1em;"> Não possui Cadastro? </br>Clique aqui para se Cadastrar...</span></a>-->
 			</div>
