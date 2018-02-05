@@ -93,18 +93,6 @@ body{
 }
 
 
-.caixa_msg{
-    background: #e6e6e6;
-    border-radius: 10px;
-    
-}
-
-.enviar{
-    background: #0052cc;
-    border-radius: 10px;
-
-}
-
 </style>
 
 
@@ -748,7 +736,7 @@ function abrir_info(){
 
 	</div>	
 -->	
-
+<!--
 	<div  style="position:fixed; width: 100%;  bottom:3em; right:0%; height: 3.5em;">
 
 			<textarea class="caixa_msg" id="mensagem_escrita" style=" position: absolute; top:0em; resize: none; width: 70%; left:1%; height: 3em; "  rows="4" cols="50" placeholder="Escreva sua mensagem"></textarea>
@@ -760,7 +748,17 @@ function abrir_info(){
 
 
 	</div>	
+-->
 
+<div  style="position:fixed; width: 100%;  bottom:3em; right:0%; height: 3.5em;">
+
+			<textarea class="caixa_msg" id="mensagem_escrita"  rows="4" cols="50" placeholder="Escreva sua mensagem"></textarea>
+
+
+			<span  class="enviar" onclick="enviar()"  > ENVIAR </span>
+
+
+	</div>	
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.5.1.min.js"></script> 
 <script>
