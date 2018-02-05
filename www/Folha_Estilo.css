@@ -113,6 +113,33 @@ border: 0px;
 	
 }
 
+.caixa_msg{
+    background: white;
+    border-radius: 10px;
+	border: 1px solid #797979;
+	 position: absolute; 
+	 top:0em; 
+	 resize: none; 
+	 width: 70%; 
+	 left:1%; 
+	 height: 3em; 
+    
+}
+
+.enviar{
+	position:absolute; 
+	top: 0em; 
+	width: 25%; 
+	height: 3em; 
+	right:1%; 
+	font-size: 0.9em; 
+	color: white; 
+	line-height:3em;  
+    background: #70913e;
+    border-radius: 10px;
+
+}
+
 ::-webkit-input-placeholder {
    color: gray;
    font: 16px 'Montserrat', sans-serif;
