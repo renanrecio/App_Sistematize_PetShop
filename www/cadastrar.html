@@ -84,6 +84,12 @@ var xmlHttp;
 						localStorage.nome_usuario = str.substring((pos_nome+5), pos_email);
 						localStorage.email_usuario = str.substring((pos_email+6), str.length);
 						
+						localStorage.tipo_login = 'usuario'; //Pois só é possivel fazer cadastro pelo App de usuarios
+
+						//form[0].submit;
+						//window.location.href="home.html";
+						localStorage.mudou_de_usuario = "1";
+						
 						//alert(str);
 						//alert(localStorage.id_usuario);
 
