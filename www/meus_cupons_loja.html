@@ -88,7 +88,7 @@ body{
 			//xmlHttp.open("POST", "https://acheloja.com/m/ajax_meus_cupons_app.php", true);
 			//xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_meus_cupons_app.php", true);
 			
-			xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_meus_cupons_app.php", true);
+			xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_meus_cupons_loja_app.php", true);
 			
 			
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -375,6 +375,70 @@ body{
 
 </script>
 
+
+<script>
+		function validar_cupom(id_cupom, id_usuario, id_anuncio){
+			
+			var answer = confirm("Tem certeza que quer validar esse Cupom?");
+			if (answer){
+				document.getElementById('img_carregando').style.visibility = 'visible';
+				startRequest_validar_cupom(id_cupom, id_usuario, id_anuncio);
+			}
+			
+		}
+		
+		
+
+		function createXMLHttpRequest_validar_cupom() {
+			if (window.ActiveXObject) {
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			else if (window.XMLHttpRequest) {
+			xmlHttp = new XMLHttpRequest();
+			}
+			}
+			
+			
+			function startRequest_validar_cupom(id_cupom, id_usuario) {
+			createXMLHttpRequest_validar_cupom();
+			xmlHttp.onreadystatechange = handleStateChange_validar_cupom;
+			
+			xmlHttp.open("GET", "http://54.207.38.125/AcheLoja2.0/validar_cupom.php?id="+id_cupom+"&id_u="+id_usuario+"&id_a="+id_loja+"", true);
+			
+			
+			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			
+			xmlHttp.send();
+			
+			
+			
+		
+			}
+
+			
+			function handleStateChange_validar_cupom() {
+			if(xmlHttp.readyState == 4) {
+			if(xmlHttp.status == 200) {
+				
+				
+				if(xmlHttp.responseText.trim() == "ok"){
+					
+					location.reload();
+					
+				}else{
+					
+					alert("Ocorreu algum problema!")
+					
+				}
+				
+						
+				
+				
+			}
+			}
+			}
+
+</script>
  
 
 </body>
