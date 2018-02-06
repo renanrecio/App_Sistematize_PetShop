@@ -140,6 +140,18 @@ border: 0px;
 
 }
 
+.titulo_meus_cupons_pg_meus_cupons{
+	
+	position:absolute; 
+	top:11%; 
+	color: #70913e;
+	font-size:1.1em; 
+	width:80%; 
+	left:10%; 
+	
+	
+}
+
 ::-webkit-input-placeholder {
    color: gray;
    font: 16px 'Montserrat', sans-serif;
