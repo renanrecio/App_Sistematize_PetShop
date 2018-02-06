@@ -227,8 +227,21 @@
 					
 					var mensagem = document.getElementById("mensagem").value.trim();
 					
-					xmlHttp.send("id_loja="+id_loja+"&titulo="+titulo+"&mensagem="+mensagem+"");
+					if(( titulo == '' ) || (mensagem == '')){
 					
+						if(titulo == '' ){ 
+							alert('Preencha o título antes de enviar! Envie novamente!');
+							
+						}else{
+						
+							if(mensagem == '' ) alert('Preencha a mensagem antes de enviar! Envie novamente!');
+						}//fim do else
+					
+					}else{
+					
+						xmlHttp.send("id_loja="+id_loja+"&titulo="+titulo+"&mensagem="+mensagem+"");
+						
+					}//fim do else
 			
 		
 			}
