@@ -153,13 +153,13 @@ border: 0px;
 }
 
 .titulo_lojas_favoritas_pg_lista_usuarios_chat{
-	
 	position:absolute; 
 	top:11%; 
-	color: #70913e;
-	font-size:1.1em; 
+	color:#70913e; 
+	font-size:1em; 
 	width:80%; 
 	left:10%; 
+	font-weight: bold; 
 	
 }
 
