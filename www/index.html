@@ -63,6 +63,9 @@ startRequest_login();
 
 <!-- Verificar se é o primeiro loggin-->
 <script>
+
+localStorage.nome_cliente = ''; //sempre que abrir o app tira oque está escrito no busca de clientes do chat do lojsta
+
 if(typeof localStorage.nome_usuario === "undefined"){
 
 localStorage.nome_usuario = '';
@@ -74,6 +77,7 @@ localStorage.id_usuario = '';
 localStorage.nome_produto = '';
 localStorage.tipo_login = '';
 localStorage.versao_app = '';
+localStorage.nome_cliente = '';
 localStorage.primeiro_acesso = 1;
 
 
