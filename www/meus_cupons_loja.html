@@ -398,12 +398,12 @@ body{
 
 
 <script>
-		function validar_cupom(id_cupom, id_usuario, id_anuncio){
+		function validar_cupom(id_cupom, id_usuario){
 			
 			var answer = confirm("Tem certeza que quer validar esse Cupom?");
 			if (answer){
 				document.getElementById('img_carregando').style.visibility = 'visible';
-				startRequest_validar_cupom(id_cupom, id_usuario, id_anuncio);
+				startRequest_validar_cupom(id_cupom, id_usuario);
 			}
 			
 		}
