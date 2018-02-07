@@ -227,7 +227,7 @@ function abrir_info(){
 			
 			var msg_so_enviadas;
 			
-			var data_msg_mais_recente;
+			var data_msg_mais_recente='';
 			
 			var data_horas_msg_enviada;
 			
@@ -286,30 +286,36 @@ function abrir_info(){
 			//document.getElementById("verifica_login").value = xmlHttp3.responseText.trim();
 			
 			   string = xmlHttp3.responseText.trim();
+			   
+			     if( string == 'vazio'){
+				
+					data_ultima_visualizacao_msgs_usuario = '';
+				
+				}else{
 			
-			   objeto = JSON.parse(string);
-			   
-			   data_ultima_visualizacao_msgs_lojista = objeto[0].data_ultima_visualizacao_msgs_lojista;
-			   
-			    if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
-			   
-					msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
-								
-					for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
-						msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
-						msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
-					}
-			   
-			   }//fim do if
-			   
-			  // alert(data_ultima_visualizacao_msgs_lojista);
-			  
-			  
-			  if(eh_a_primeira_vez == 1){
-				  startRequest_chat();
-				  eh_a_primeira_vez = 0;
-			  }//fim do if
-			
+					   objeto = JSON.parse(string);
+					   
+					   data_ultima_visualizacao_msgs_lojista = objeto[0].data_ultima_visualizacao_msgs_lojista;
+					   
+						if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
+					   
+							msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
+										
+							for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
+								msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
+								msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
+							}
+					   
+					   }//fim do if
+					   
+					  // alert(data_ultima_visualizacao_msgs_lojista);
+					  
+					  
+					  if(eh_a_primeira_vez == 1){
+						  startRequest_chat();
+						  eh_a_primeira_vez = 0;
+					  }//fim do if
+				}//fim do else
 			}
 			}
 			}
@@ -410,155 +416,162 @@ function abrir_info(){
 				
 				str = xmlHttp.responseText.trim();
 				
+				if( str == 'sem_mensagens'){
 				
-				obj = JSON.parse(str);
-			
+					document.getElementById("img_carregando_produtos").style.visibility = "hidden";
 				
-				//document.getElementById("div_chat").innerHTML = obj[1].id + ", " + obj[1].mensagem;
+				}else{
 				
-				
-
-				ultimo_index = (obj.length) - 1;
-				
-				data_msg_mais_recente = obj[0].data_envio;
-				
-				hora_ultima_visualizacao_msgs_lojista = data_ultima_visualizacao_msgs_lojista.substr(11, 5);
-				
-				//para carregar mensagens anteriores
-				if(obj.length != tamanho_objeto_anterior ){
-					span = '<center><span  onclick="startRequest_chat()" style=" position:absolute; top: 100px; font-size:0.8em; color: blue; line-height:1em; width:80%; left:10%; " >Carregar mensagens anteriores</span></center>';
-					$('#div_chat').append( span );
-					tamanho_objeto_anterior = obj.length;
-				}//fim do if
-				
-				
-				//for (i = 0; i < obj.length; i++) { 
-				for (i = ultimo_index; i >= 0; i--) { 
-					
-					if(i < ultimo_index){
-					
-						j = i + 1;
-						data_horas_msg_enviada_anterior = obj[j].data_envio; //para pegar o anterior é +1 pois o for é de tras para frente
-						data_horas_msg_enviada_sem_hora_anterior = data_horas_msg_enviada_anterior.substr(0, 10);
-					}
-					
-					data_horas_msg_enviada = obj[i].data_envio;
-					horas_msg_enviada = data_horas_msg_enviada.substr(11, 5);
-					data_horas_msg_enviada_sem_hora = data_horas_msg_enviada.substr(0, 10);
-					dia_msg_enviada = data_horas_msg_enviada.substr(8, 2);
-					mes_msg_enviada = data_horas_msg_enviada.substr(5, 2);
-					ano_msg_enviada = data_horas_msg_enviada.substr(0, 4);
-					
-					msg = obj[i].mensagem;
-					
-						if( msg != ''){
 						
-							if(id==0){
-							
-								height_antigo= 0;
-								
-								
-							}else{
-								id_antigo = id - 1;
-								height_antigo = (document.getElementById('msg'+id_antigo).clientHeight)+30;
+						obj = JSON.parse(str);
+					
+						
+						//document.getElementById("div_chat").innerHTML = obj[1].id + ", " + obj[1].mensagem;
+						
+						
 
+						ultimo_index = (obj.length) - 1;
+						
+						data_msg_mais_recente = obj[0].data_envio;
+						
+						//hora_ultima_visualizacao_msgs_lojista = data_ultima_visualizacao_msgs_lojista.substr(11, 5);
+						
+						//para carregar mensagens anteriores
+						if(obj.length != tamanho_objeto_anterior ){
+							span = '<center><span  onclick="startRequest_chat()" style=" position:absolute; top: 100px; font-size:0.8em; color: blue; line-height:1em; width:80%; left:10%; " >Carregar mensagens anteriores</span></center>';
+							$('#div_chat').append( span );
+							tamanho_objeto_anterior = obj.length;
+						}//fim do if
+						
+						
+						//for (i = 0; i < obj.length; i++) { 
+						for (i = ultimo_index; i >= 0; i--) { 
+							
+							if(i < ultimo_index){
+							
+								j = i + 1;
+								data_horas_msg_enviada_anterior = obj[j].data_envio; //para pegar o anterior é +1 pois o for é de tras para frente
+								data_horas_msg_enviada_sem_hora_anterior = data_horas_msg_enviada_anterior.substr(0, 10);
 							}
 							
-							top_ = 	top_ + height_antigo;
+							data_horas_msg_enviada = obj[i].data_envio;
+							horas_msg_enviada = data_horas_msg_enviada.substr(11, 5);
+							data_horas_msg_enviada_sem_hora = data_horas_msg_enviada.substr(0, 10);
+							dia_msg_enviada = data_horas_msg_enviada.substr(8, 2);
+							mes_msg_enviada = data_horas_msg_enviada.substr(5, 2);
+							ano_msg_enviada = data_horas_msg_enviada.substr(0, 4);
 							
-							//Caso entre uma mensagem e outra mude a data colocar no meio do chat qual é a nova data
-							if(data_horas_msg_enviada_sem_hora_anterior != data_horas_msg_enviada_sem_hora){
+							msg = obj[i].mensagem;
 							
-								span = '<center><span class="data" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:0.8em; color: black; line-height:1em; width:50%; left:25%;" >'+dia_msg_enviada+'/'+mes_msg_enviada+'/'+ano_msg_enviada+'</span></center>';
-							
-								$('#div_chat').append( span );
-							
-								height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
+								if( msg != ''){
+								
+									if(id==0){
 									
-								top2 = 	top_ + height_antigo;
-								
-								span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
+										height_antigo= 0;
+										
+										
+									}else{
+										id_antigo = id - 1;
+										height_antigo = (document.getElementById('msg'+id_antigo).clientHeight)+30;
 
-								$('#div_chat').append( span_espaco );
-								
-								id = id + 1;
-								
-								top_ = 	top_ + height_antigo;
-							}//fim do if
-							
-						
-							//Definir se a mensagem é vindo do lojista ou do usuario para escrever a mensagem
-							if( obj[i].quem_envia == "usuario"){
-							
-								if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
-									string_msg_lida =  '<span style="color: blue;">✓✓</span>';
-								}else{
-									string_msg_lida =  '<span class="msg_so_enviada" style="color: black;">✓</span>';
-								}//fim do else
-								
-								span = '<span class="msg" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'  '+string_msg_lida+'</span></span>';
-							
-							}else{
-								
-								span = '<span class="msg2" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'</span></span>';
-							
-							}//fim do else	
-								
-								
-							$('#div_chat').append( span );
-							
-							height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
-								
-							top2 = 	top_ + height_antigo;
-							
-							span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
+									}
+									
+									top_ = 	top_ + height_antigo;
+									
+									//Caso entre uma mensagem e outra mude a data colocar no meio do chat qual é a nova data
+									if(data_horas_msg_enviada_sem_hora_anterior != data_horas_msg_enviada_sem_hora){
+									
+										span = '<center><span class="data" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:0.8em; color: black; line-height:1em; width:50%; left:25%;" >'+dia_msg_enviada+'/'+mes_msg_enviada+'/'+ano_msg_enviada+'</span></center>';
+									
+										$('#div_chat').append( span );
+									
+										height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
+											
+										top2 = 	top_ + height_antigo;
+										
+										span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
 
-							$('#div_chat').append( span_espaco );
-							
-							id = id + 1;
-							
-						}	//fim do if
+										$('#div_chat').append( span_espaco );
+										
+										id = id + 1;
+										
+										top_ = 	top_ + height_antigo;
+									}//fim do if
+									
+								
+									//Definir se a mensagem é vindo do lojista ou do usuario para escrever a mensagem
+									if( obj[i].quem_envia == "usuario"){
+									
+										if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
+											string_msg_lida =  '<span style="color: blue;">✓✓</span>';
+										}else{
+											string_msg_lida =  '<span class="msg_so_enviada" style="color: black;">✓</span>';
+										}//fim do else
+										
+										span = '<span class="msg" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'  '+string_msg_lida+'</span></span>';
+									
+									}else{
+										
+										span = '<span class="msg2" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'</span></span>';
+									
+									}//fim do else	
+										
+										
+									$('#div_chat').append( span );
+									
+									height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
+										
+									top2 = 	top_ + height_antigo;
+									
+									span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
+
+									$('#div_chat').append( span_espaco );
+									
+									id = id + 1;
+									
+								}	//fim do if
+								
+						}//fim do for
 						
-				}//fim do for
-				
-				//document.getElementById("div_chat").innerHTML = document.getElementById("div_chat").innerHTML + str;
-				document.getElementById("img_carregando_produtos").style.visibility = "hidden";
-				
-				if(limit_max > constante_limit_max){ 
-					/*numero_de_msgs = $('.msg').length +  $('.msg2').length;
-					
-					id_scroll = numero_de_msgs - constante_limit_max;
-					
-					
-					(function($) {
-						$('#msg'+id_scroll).goTo = function() {
-							$('html, body').animate({
-								scrollTop: $(this).offset().top + 'px'
-							}, 'fast');
-							return this; // for chaining...
-						}
-					})(jQuery);
-					*/
-				
-					document.body.scrollTop = document.body.scrollHeight;
-					
-				}else{
-					document.body.scrollTop = document.body.scrollHeight;
-					/*
-					(function($) {
-						$('#msg'+numero_de_msgs).goTo = function() {
-							$('html, body').animate({
-								scrollTop: $(this).offset().top + 'px'
-							}, 'fast');
-							return this; // for chaining...
-						}
-					})(jQuery);
-				    */
-				
+						//document.getElementById("div_chat").innerHTML = document.getElementById("div_chat").innerHTML + str;
+						document.getElementById("img_carregando_produtos").style.visibility = "hidden";
+						
+						if(limit_max > constante_limit_max){ 
+							/*numero_de_msgs = $('.msg').length +  $('.msg2').length;
+							
+							id_scroll = numero_de_msgs - constante_limit_max;
+							
+							
+							(function($) {
+								$('#msg'+id_scroll).goTo = function() {
+									$('html, body').animate({
+										scrollTop: $(this).offset().top + 'px'
+									}, 'fast');
+									return this; // for chaining...
+								}
+							})(jQuery);
+							*/
+						
+							document.body.scrollTop = document.body.scrollHeight;
+							
+						}else{
+							document.body.scrollTop = document.body.scrollHeight;
+							/*
+							(function($) {
+								$('#msg'+numero_de_msgs).goTo = function() {
+									$('html, body').animate({
+										scrollTop: $(this).offset().top + 'px'
+									}, 'fast');
+									return this; // for chaining...
+								}
+							})(jQuery);
+							*/
+						
+						}//fim do else
+									
+						limit_max = limit_max + constante_limit_max;
+						
 				}//fim do else
-							
-				limit_max = limit_max + constante_limit_max;
-				
 				
 			}
 			}
@@ -629,89 +642,96 @@ function abrir_info(){
 			
 				str = xmlHttp.responseText.trim();
 				
+				if( str == 'sem_mensagens'){
 				
-				obj = JSON.parse(str);
-			
+					//nao fazer  nada
 				
-				//document.getElementById("div_chat").innerHTML = obj[1].id + ", " + obj[1].mensagem;
-
-				ultimo_index = (obj.length) - 1;
+				}else{
 				
-				data_msg_mais_recente = obj[0].data_envio;
 				
-				//for (i = 0; i < obj.length; i++) { 
-				for (i = ultimo_index; i >= 0; i--) { 
-
+						obj = JSON.parse(str);
 					
-					data_horas_msg_enviada = obj[i].data_envio;
-					horas_msg_enviada = data_horas_msg_enviada.substr(11, 5);
-
-
-					
-					msg = obj[i].mensagem;
-					
-						if( msg != ''){
 						
-							if(id==0){
-							
-								height_antigo= 0;
-								
-								
-							}else{
-								id_antigo = id - 1;
-								height_antigo = (document.getElementById('msg'+id_antigo).clientHeight)+30;
+						//document.getElementById("div_chat").innerHTML = obj[1].id + ", " + obj[1].mensagem;
 
-							}
-							
-							top_ = 	top_ + height_antigo;
-							
-						   
-							
-							//Definir se a mensagem é vindo do lojista ou do usuario para escrever a mensagem
-							if( obj[i].quem_envia == "usuario"){
-							
-								if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
-									string_msg_lida =  '<span style="color: blue;">✓✓</span>';
-								}else{
-									string_msg_lida =  '<span class="msg_so_enviada" style="color: black;">✓</span>';
-								}//fim do else
-								
-								span = '<span class="msg" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'  '+string_msg_lida+'</span></span>';
-							
-							}else{
-								
-								span = '<span class="msg2" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'</span></span>';
-							
-								msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
-								
-								for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
-									msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
-									msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
-								}
-							}//fim do else	
-								
-								
-							$('#div_chat').append( span );
-							
-							height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
-								
-							top2 = 	top_ + height_antigo;
-							
-							span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
-
-							$('#div_chat').append( span_espaco );
-							
-							id = id + 1;
-							
-						}	//fim do if
+						ultimo_index = (obj.length) - 1;
 						
-				}//fim do for
-				
-				//document.getElementById("div_chat").innerHTML = document.getElementById("div_chat").innerHTML + str;
-				//document.getElementById("img_carregando_produtos").style.visibility = "hidden";
-				
-				document.body.scrollTop = document.body.scrollHeight;
+						data_msg_mais_recente = obj[0].data_envio;
+						
+						//for (i = 0; i < obj.length; i++) { 
+						for (i = ultimo_index; i >= 0; i--) { 
+
 							
+							data_horas_msg_enviada = obj[i].data_envio;
+							horas_msg_enviada = data_horas_msg_enviada.substr(11, 5);
+
+
+							
+							msg = obj[i].mensagem;
+							
+								if( msg != ''){
+								
+									if(id==0){
+									
+										height_antigo= 0;
+										
+										
+									}else{
+										id_antigo = id - 1;
+										height_antigo = (document.getElementById('msg'+id_antigo).clientHeight)+30;
+
+									}
+									
+									top_ = 	top_ + height_antigo;
+									
+								   
+									
+									//Definir se a mensagem é vindo do lojista ou do usuario para escrever a mensagem
+									if( obj[i].quem_envia == "usuario"){
+									
+										if(data_ultima_visualizacao_msgs_lojista >= data_horas_msg_enviada){
+											string_msg_lida =  '<span style="color: blue;">✓✓</span>';
+										}else{
+											string_msg_lida =  '<span class="msg_so_enviada" style="color: black;">✓</span>';
+										}//fim do else
+										
+										span = '<span class="msg" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'  '+string_msg_lida+'</span></span>';
+									
+									}else{
+										
+										span = '<span class="msg2" id="msg'+id+'" style=" position:absolute; top: '+top_+'px; font-size:1em; color: black; line-height:1em;  text-align: left; padding: 10px 10px 10px 10px; " >'+msg+'</br><span style=" position: absolute; font-size: 0.5em; right:2%; ;" >'+horas_msg_enviada+'</span></span>';
+									
+										msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
+										
+										for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
+											msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
+											msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
+										}
+									}//fim do else	
+										
+										
+									$('#div_chat').append( span );
+									
+									height_antigo = (document.getElementById('msg'+id).clientHeight)+30;
+										
+									top2 = 	top_ + height_antigo;
+									
+									span_espaco = '<span class="msg_espaco" id="espaco" style=" position:absolute; top: '+top2+'px; font-size:2em; color: black; line-height:1em; height:2.5em; background:transparent;  text-align: left; padding: 20px 20px 20px 20px; " ></span>';
+
+									$('#div_chat').append( span_espaco );
+									
+									id = id + 1;
+									
+								}	//fim do if
+								
+						}//fim do for
+						
+						//document.getElementById("div_chat").innerHTML = document.getElementById("div_chat").innerHTML + str;
+						//document.getElementById("img_carregando_produtos").style.visibility = "hidden";
+						
+						document.body.scrollTop = document.body.scrollHeight;
+						
+				}//fim do else					
 
 				
 			}
