@@ -20,7 +20,7 @@ p, input, span,a,li,placeholder,select,option,td,tr{
 .botao_cadastro_login_pg_index{
 	
 position: relative; 
-top:4.5em; 
+top:5em; 
 height: 1.75em; 
 width:40%;   
 color:white; 
@@ -39,7 +39,7 @@ border: 0px;
 .botao_entre_login_pg_index{
 	
 	position: relative; 
-	top:4.5em; 
+	top:5em; 
 	height: 1.75em; 
 	width:40%; 
 	color:white; 
