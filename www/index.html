@@ -64,7 +64,8 @@ startRequest_login();
 <!-- Verificar se é o primeiro loggin-->
 <script>
 
-localStorage.nome_cliente = ''; //sempre que abrir o app tira oque está escrito no busca de clientes do chat do lojsta
+localStorage.nome_cliente = ''; //sempre que abrir o app tira oque está escrito no busca de clientes do chat do lojista
+localStorage.numero_nome_cupom = ''; //sempre que abrir o app tira oque está escrito no busca de cupons do app do lojista
 
 if(typeof localStorage.nome_usuario === "undefined"){
 
@@ -78,6 +79,7 @@ localStorage.nome_produto = '';
 localStorage.tipo_login = '';
 localStorage.versao_app = '';
 localStorage.nome_cliente = '';
+localStorage.numero_nome_cupom = '';
 localStorage.primeiro_acesso = 1;
 
 

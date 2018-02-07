@@ -49,19 +49,6 @@ body{
 //var id_loja = "87";
 </script>
 
- <script>
- 
- function busca_cupom(){
- 
-	localStorage.numero_nome_cupom = document.getElementById("numero_nome_cupom").value;
-	 
-	startRequest_meus_cupons();
-	
- 
- }
- 
- </script>
-
 <script language="javascript" type="text/javascript">
 	
 	function chamar_vitrine(nick_site, id_anuncio){
@@ -106,7 +93,7 @@ body{
 			
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
-			xmlHttp.send("id_loja="+id_loja+"&id_usuario="+localStorage.id_usuario+"&numero_nome_cupom="+localStorage.numero_nome_cupom);
+			xmlHttp.send("id_loja="+id_loja+"&id_usuario="+localStorage.id_usuario);
 			
 			}
 
@@ -122,9 +109,7 @@ body{
 				
 				document.getElementById("div_meus_cupons").innerHTML = document.getElementById("div_meus_cupons").innerHTML + str;
 				
-				document.getElementById("numero_nome_cupom").value = localStorage.numero_nome_cupom;
 				
-				localStorage.numero_nome_cupom = '';
 				
 			}
 			}
@@ -179,12 +164,6 @@ body{
       $("#menu").load("menu_fixo.html"); 
     });
 </script> 
-
- <div class="menu_superior"  ></div> 
-
- <div style="width: 100%;" ><form onsubmit="busca_cupom()"><input type="text" id="numero_nome_cupom" name="numero_nome_cupom" value="" placeholder="Buscar número do cupom ou nome do cliente..."  style=" position:fixed; font-size:1em; top:0.325em; left:3%; height: 2em; width: 94%; "/></form> <img id ="lupa" onclick="busca_cupom()" src="fotos/lupa_cor.png" style="position: fixed; right: 3%; top:0.1em; width:2.8em; height:2.8em; "/></div>
-
- 
 
 <!--
 <a href="promocoes.html"><img src="fotos/estrela_selecionada.png" width="100%" style=" position:fixed; background-color: #0054a6; bottom:0em; right:32%; width:2.8em; height:2.8em;" /> </a>
