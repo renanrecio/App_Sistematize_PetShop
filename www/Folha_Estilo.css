@@ -53,6 +53,43 @@ border: 0px;
 	
 }
 
+.botao_cadastro_login_pg_inicial{
+	
+position: relative; 
+top:10em; 
+height: 1.75em; 
+width:40%;   
+color:#70913e; 
+background-color: white; 
+font-size:1.25em; 
+cursor: pointer; 
+border-radius: 25px; 
+opacity: 1; 
+filter: alpha(opacity=100); 
+border: 0px;
+	
+}
+
+
+
+.botao_entre_login_pg_inicial{
+	
+	position: relative; 
+	top:10em; 
+	height: 1.75em; 
+	width:40%; 
+	color:#70913e; 
+	background-color: white; 
+	font-size:1.25em; 
+	cursor: pointer; 
+	border-radius: 25px; 
+	opacity: 1; 
+	filter: alpha(opacity=100); 
+	border: 0px;
+	
+}
+
+
 .botao_cadastre_se_pg_cadastrar{
 	
 	position: relative; 
