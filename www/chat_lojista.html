@@ -220,7 +220,7 @@ function abrir_info(){
 			
 			var data_ultima_visualizacao_msgs_usuario;
 			
-			var data_msg_mais_recente;
+			var data_msg_mais_recente = '';
 			
 			var data_horas_msg_enviada;
 			
@@ -285,29 +285,37 @@ function abrir_info(){
 			
 			   string = xmlHttp3.responseText.trim();
 			
-			   objeto = JSON.parse(string);
-			   
-			   data_ultima_visualizacao_msgs_usuario = objeto[0].data_ultima_visualizacao_msgs;
-			   
-			   if(data_ultima_visualizacao_msgs_usuario >= data_horas_msg_enviada){
-			   
-					msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
-								
-					for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
-						msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
-						msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
-					}
-			   
-			   }//fim do if
-			   
-			  // alert(data_ultima_visualizacao_msgs_usuario);
-			  
-			  if(eh_a_primeira_vez == 1){
-				  startRequest_chat();
-				  eh_a_primeira_vez = 0;
-			  }//fim do if
-			  
-			
+			   if( string == 'vazio'){
+				
+					data_ultima_visualizacao_msgs_usuario = '';
+				
+				}else{
+				
+				   objeto = JSON.parse(string);
+				   
+				   data_ultima_visualizacao_msgs_usuario = objeto[0].data_ultima_visualizacao_msgs;
+				   
+				   if(data_ultima_visualizacao_msgs_usuario >= data_horas_msg_enviada){
+				   
+						msg_so_enviadas = document.getElementsByClassName("msg_so_enviada");
+									
+						for (indice_msg_so_enviadas = 0; indice_msg_so_enviadas < msg_so_enviadas.length; indice_msg_so_enviadas++) {
+							msg_so_enviadas[indice_msg_so_enviadas].style.color = "blue";
+							msg_so_enviadas[indice_msg_so_enviadas].innerHTML  = "✓✓";
+						}
+				   
+				   }//fim do if
+				   
+				  // alert(data_ultima_visualizacao_msgs_usuario);
+				  
+				  if(eh_a_primeira_vez == 1){
+					  startRequest_chat();
+					  eh_a_primeira_vez = 0;
+				  }//fim do if
+				 
+				 
+				}//fim do else
+				
 			}
 			}
 			}
@@ -391,6 +399,8 @@ function abrir_info(){
 			document.getElementById("img_carregando_produtos").style.visibility = "visible";
 			
 			
+			
+			
 			}
 
 			
@@ -400,11 +410,13 @@ function abrir_info(){
 			//document.getElementById("resultado").innerHTML = xmlHttp.responseText.trim();
 			//document.getElementById("verifica_login").value = xmlHttp.responseText.trim();
 			
+			
 				if(limit_max > constante_limit_max){ 
 					document.getElementById("div_chat").innerHTML = '';
 					id = 0;
 					top_ = 150;
 				}
+				
 				
 				str = xmlHttp.responseText.trim();
 				
@@ -423,7 +435,9 @@ function abrir_info(){
 					
 					data_msg_mais_recente = obj[0].data_envio;
 					
-					hora_ultima_visualizacao_msgs_usuario = data_ultima_visualizacao_msgs_usuario.substr(11, 5);
+					//hora_ultima_visualizacao_msgs_usuario = data_ultima_visualizacao_msgs_usuario.substr(11, 5);
+					
+					
 					
 					//para carregar mensagens anteriores
 					if(obj.length != tamanho_objeto_anterior ){
@@ -431,6 +445,7 @@ function abrir_info(){
 						$('#div_chat').append( span );
 						tamanho_objeto_anterior = obj.length;
 					}//fim do if
+					
 					
 					//for (i = 0; i < obj.length; i++) { 
 					for (i = ultimo_index; i >= 0; i--) { 
@@ -559,6 +574,7 @@ function abrir_info(){
 					}//fim do else
 								
 					limit_max = limit_max + constante_limit_max;
+					
 					
 				}//fim do else
 
