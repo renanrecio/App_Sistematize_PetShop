@@ -17,42 +17,10 @@
 //var id_loja = "87";
 </script>
 
- <script>
- 
- function busca_cliente(){
- 
-	localStorage.nome_cliente = document.getElementById("nome_cliente").value;
-	 
-	startRequest_lista_chat();
-	
- 
- }
- 
- </script
 
 </head>
 
 <body>
-
-<div id="menu">
-
-</div>	
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
-<script> 
-    $(function(){
-      $("#menu").load("menu_fixo.html"); 
-    });
-</script> 
-
-
- <div class="menu_superior"  ></div> 
-
- <div style="width: 100%;" ><form onsubmit="busca_cliente()"><input type="text" id="nome_cliente" name="nome_cliente" value="" placeholder="Buscar nome de Cliente..."  style=" position:fixed; font-size:1em; top:0.325em; left:3%; height: 2em; width: 94%; "/></form> <img id ="lupa" onclick="busca_cliente()" src="fotos/lupa_cor.png" style="position: fixed; right: 3%; top:0.1em; width:2.8em; height:2.8em; "/></div>
-
- 
-
 
 <!--<p id="titulo_lojas_favoritas" style="position:absolute; top:11%; color:black; font-size:1.1em; width:80%; left:10%; "> Lojas Favoritas </p> -->
 <p class="titulo_lojas_favoritas_pg_lista_usuarios_chat" > Chat com Clientes </p>
@@ -70,6 +38,20 @@
 
 
 
+ 
+
+	
+<div id="menu">
+
+</div>	
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>	
+<script> 
+    $(function(){
+      $("#menu").load("menu_fixo.html"); 
+    });
+</script> 
 
 <script language="javascript" type="text/javascript">
 	
@@ -114,7 +96,7 @@
 			
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
-			xmlHttp.send("id_loja="+id_loja+"&nome_cliente="+localStorage.nome_cliente);
+			xmlHttp.send("id_loja="+id_loja+"");
 			
 			
 			
@@ -136,9 +118,7 @@
 				//alert(str.length);
 				
 				if( (document.getElementById("div_usuarios").innerHTML) == '') document.getElementById("msg_sem_usuarios").style.visibility = "visible";
-				
-				document.getElementById("nome_cliente").value = localStorage.nome_cliente;
-				localStorage.nome_cliente = '';
+
 				
 			}
 			}
