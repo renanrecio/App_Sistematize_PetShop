@@ -411,7 +411,7 @@ function abrir_info(){
 			//document.getElementById("verifica_login").value = xmlHttp.responseText.trim();
 			
 			
-				if(limit_max > constante_limit_max){ 
+				if(limit_max >= constante_limit_max){ 
 					document.getElementById("div_chat").innerHTML = '';
 					id = 0;
 					top_ = 150;
@@ -572,7 +572,10 @@ function abrir_info(){
 						*/
 					
 					}//fim do else
-								
+					if(limit_max == 30){
+							localStorage[id_usuario_escolhido] = document.getElementById("div_chat").innerHTML;		
+					}//fim do if
+					
 					limit_max = limit_max + constante_limit_max;
 					
 					
@@ -597,7 +600,19 @@ function abrir_info(){
 
 	</div>
 	
+<!-- Inserir o localStorage.ultimas_msgs_chat_usuario_salvas na div até carregar... -->
+<script>
+
+if( (typeof localStorage[id_usuario_escolhido] !== "undefined") || ( localStorage[id_usuario_escolhido] != '') ){
+
+	document.getElementById("div_chat").innerHTML = localStorage[id_usuario_escolhido];
+	document.body.scrollTop = document.body.scrollHeight;
 	
+	//alert(localStorage[id_usuario_escolhido]);
+
+}//fim do if
+
+</script>	
 	
 
 <!-- Inserir novas msg online -->	

@@ -380,7 +380,7 @@ function abrir_info(){
 			createXMLHttpRequest();
 			xmlHttp.onreadystatechange = handleStateChange;
 			
-			document.getElementById("img_carregando_produtos").style.visibility = "visible";
+			//document.getElementById("img_carregando_produtos").style.visibility = "visible";
 			
 			//xmlHttp.open("POST", "https://acheloja.com/m/ajax_vitrine_app.php", true);
 			//xmlHttp.open("POST", "http://52.67.44.156/m/ajax_vitrine_app.php", true);
@@ -418,7 +418,7 @@ function abrir_info(){
 				
 				if( str == 'sem_mensagens'){
 				
-					document.getElementById("img_carregando_produtos").style.visibility = "hidden";
+					//document.getElementById("img_carregando_produtos").style.visibility = "hidden";
 				
 				}else{
 				
@@ -534,7 +534,7 @@ function abrir_info(){
 						}//fim do for
 						
 						//document.getElementById("div_chat").innerHTML = document.getElementById("div_chat").innerHTML + str;
-						document.getElementById("img_carregando_produtos").style.visibility = "hidden";
+						//document.getElementById("img_carregando_produtos").style.visibility = "hidden";
 						
 						if(limit_max > constante_limit_max){ 
 							/*numero_de_msgs = $('.msg').length +  $('.msg2').length;
