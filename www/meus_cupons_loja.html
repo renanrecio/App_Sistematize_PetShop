@@ -424,7 +424,8 @@ body{
 			createXMLHttpRequest_validar_cupom();
 			xmlHttp.onreadystatechange = handleStateChange_validar_cupom;
 			
-			xmlHttp.open("GET", "http://54.207.38.125/AcheLoja2.0/validar_cupom.php?id="+id_cupom+"&id_u="+id_usuario+"&id_a="+id_loja+"", true);
+			//xmlHttp.open("GET", "http://54.207.38.125/AcheLoja2.0/validar_cupom.php?id="+id_cupom+"&id_u="+id_usuario+"&id_a="+id_loja+"", true);
+			xmlHttp.open("GET", "http://54.207.38.125/AcheLoja2.0/validar_cupom_sistematize.php?id="+id_cupom+"&id_u="+id_usuario+"&id_a="+id_loja+"", true);
 			
 			
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
