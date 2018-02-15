@@ -748,13 +748,16 @@ function setupPush() {
 			
 			
 			//xmlHttp.open("POST", "https://acheloja.com/m/login_app.php", true);
+			
 			xmlHttp3.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_versao_app.php", true);
+			
 			
 			
 			xmlHttp3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
-			xmlHttp3.send("reg_id="+localStorage.id_dispositivo+"&versao_app="+versao_app+"");
-			
+				if( localStorage.id_dispositivo != ''){
+					xmlHttp3.send("reg_id="+localStorage.id_dispositivo+"&versao_app="+versao_app+"");
+				}//fim do if
 			
 			}
 
@@ -764,8 +767,10 @@ function setupPush() {
 			if(xmlHttp3.status == 200) {
 			//document.getElementById("resultado").innerHTML = xmlHttp.responseText.trim();
 			//document.getElementById("verifica_login").value = xmlHttp.responseText.trim();
-			
-				localStorage.versao_app = versao_app;
+				
+				if( localStorage.id_dispositivo != ''){
+					localStorage.versao_app = versao_app;
+				}//fim do if
 				
 			}
 			}
