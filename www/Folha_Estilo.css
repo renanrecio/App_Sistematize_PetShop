@@ -56,7 +56,7 @@ p, input, span,a,li,select,option,td,tr,img{
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: 'Montserrat', sans-serif;
 	font-weight: 250;
 	padding: 0.35em;
@@ -68,18 +68,27 @@ p, input, span,a,li,select,option,td,tr,img{
 }
 /*botão 1 não muda, é o botão cinza*/
 .button1 {
-    background: linear-gradient(to right,#666666ff, #999999ff);
+	background: #666666;
+	background: -moz-linear-gradient(left, #666666 0%, #999999 100%);
+	background: -webkit-linear-gradient(left, #666666 0%,#999999 100%);
+	background: linear-gradient(to right, #666666 0%,#999999 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#999999',GradientType=1 );
 	
 }
 .button1:active {
-    background: #818181ff;
+    background: #818181;
 }
 /* botão 2 é o que muda cores, tem cor 1 e 3 para gradiente e cor 2 para clicar*/
 .button2 {
-    background: linear-gradient(to right, #475b27ff, #88b04bff); /*cor1,cor3*/
+
+	background: #475b27;
+	background: -moz-linear-gradient(left, #475b27 0%, #88b04b 100%);
+	background: -webkit-linear-gradient(left, #475b27 0%,#88b04b 100%);
+	background: linear-gradient(to right, #475b27 0%,#88b04b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#475b27', endColorstr='#88b04b',GradientType=1 );
 }
 .button2:active{
-	background:#70913eff; /* COR 2 */
+	background:#70913e; /* COR 2 */
 }
 
 /* botão 3 é o que muda cores, tem cor 1 e 3 para gradiente e cor 2 para clicar*/
