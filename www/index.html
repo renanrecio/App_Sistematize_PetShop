@@ -117,7 +117,7 @@ if( (nome_usuario_guardado != '') && (typeof nome_usuario_guardado !== "undefine
 	localStorage.versao_app = '';
 	
 	if(localStorage.primeiro_acesso == 1){
-		window.location.href="tela_inicial_pg1.html";
+		//window.location.href="tela_inicial_pg1.html";
 		exit();
 	}
 	
@@ -151,9 +151,9 @@ if( (nome_usuario_guardado != '') && (typeof nome_usuario_guardado !== "undefine
 			
 			</form>
 			
-			<a href="cadastrar.html" style="text-decoration:none;"><input class="botao_cadastro_login_pg_index" type="button"  Value="Cadastre-se"/></a>
+			<a href="cadastrar.html" style="text-decoration:none;"><input class="button button1" style="position: relative; top:4.75em; "  type="button"  Value="Cadastre-se"/></a>
 				
-			<input class="botao_entre_login_pg_index" onclick="enviar_dados()" type="submit" Value="Entre"/>
+			<input class="button button2" onclick="enviar_dados()" style="position: relative; top:4.75em;" type="submit" Value="Entre"/>
 			
 			<div style="position: relative; top: 5em; width:100%;">	
 			
