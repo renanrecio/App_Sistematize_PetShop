@@ -47,9 +47,9 @@ p, input, span,a,li,select,option,td,tr,img{
 .div_boas_vindas_pg1{
 	position:relative;
 	top:-1em;
-	left:-1em;
-	width:103%;
-	height:10em;
+	left:-0.5em;
+	width:110%;
+	height:12em;
 	background-color: #fcfcff;
 }
 	
@@ -64,8 +64,7 @@ p, input, span,a,li,select,option,td,tr,img{
 	font-weight: 250;
 	padding: 0.35em;
 	border-radius: 110px;
-    width: 45%;
-    margin:2.5% 0 0 2.5%; 
+    width: 43%;
 	outline: 0;
     
 }
@@ -177,25 +176,25 @@ p, input, span,a,li,select,option,td,tr,img{
 
 ::-webkit-input-placeholder {
    color: gray;
-   font: 1em 'Montserrat', sans-serif;
+   font: 0.5em 'Montserrat', sans-serif;
    font-weight: 250;
 }
 
 :-moz-placeholder {
    color: gray;
-   font: 1em 'Montserrat', sans-serif;
+   font: 0.5em 'Montserrat', sans-serif;
    font-weight: 250;
 }
 
 ::-moz-placeholder {
    color: gray;  
-   font: 1em 'Montserrat', sans-serif;
+   font: 0.5em 'Montserrat', sans-serif;
    font-weight: 250;
 }
 
 :-ms-input-placeholder {  
    color: gray;  
-   font: 1em 'Montserrat', sans-serif;
+   font: 0.5em 'Montserrat', sans-serif;
    font-weight: 250;
 }
 
