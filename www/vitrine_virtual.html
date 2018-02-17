@@ -493,11 +493,21 @@ function desaparecer_detalhes(e){
 
 	<script>
 		
-		document.addEventListener('DOMContentLoaded', function() {
-		   document.getElementById('menu_home').src = 'fotos/home_selecionada.png';
-		}, false);
+		$(window).load(function () {
+		  document.getElementById('menu_home').src = 'fotos/home_selecionada.png';
+		});
 
 	</script>
+	
+	
+	<script>
+		
+		$(window).load(function () {
+		  $("#menu").getElementById('menu_home').src = 'fotos/home_selecionada.png';
+		});
+
+	</script>
+	
 	<!--
 	 <a href="vitrine_virtual.html"><img src="fotos/casa_selecionada.png" width="100%" style=" position:fixed; background-color: #0054a6; bottom:0em; left:10%; width:2.8em; height:2.8em;" /> </a>
     
