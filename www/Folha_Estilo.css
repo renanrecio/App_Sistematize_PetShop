@@ -46,7 +46,7 @@ p, input, span,a,li,select,option,td,tr,img{
 
 .div_boas_vindas_pg1{
 	position:relative;
-	height:30em;
+	height:15em;
 	background-color: #fcfcff;
 }
 	
@@ -56,12 +56,12 @@ p, input, span,a,li,select,option,td,tr,img{
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
 	font-weight: 250;
 	padding: 0.35em;
 	border-radius: 110px;
-    width: 35%;
+    width: 45%;
     margin:2.5% 0 0 2.5%; 
 	outline: 0;
     
