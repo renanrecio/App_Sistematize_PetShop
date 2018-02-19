@@ -49,6 +49,16 @@ font-size: 0.8em;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#475b27', endColorstr='#88b04b',GradientType=0 );
 }
 
+
+.capa_usuario_app{
+	background: #475b27;
+	background: linear-gradient(#475b27, #88b04b);
+	background: -moz-linear-gradient(top, #475b27 0%, #88b04b 100%); 
+	background: -webkit-linear-gradient(top, #475b27 0%,#88b04b 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#475b27', endColorstr='#88b04b',GradientType=0 );
+}
+
+
 .div_boas_vindas_pg1{
 	position:relative;
 	top:0em;
