@@ -173,7 +173,7 @@ function abrir_info(){
 			
 
 			
-			xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_chat_enviar.php", true);
+			xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_chat_enviar.php", true);
 			
 			
 			
@@ -261,7 +261,7 @@ function abrir_info(){
 			
 
 			
-			xmlHttp3.open("POST", "https://acheloja.com/sistematize/ajax_chat_app_data_ultima_visualizacao.php", true);
+			xmlHttp3.open("POST", ""+url_servidor+"sistematize/ajax_chat_app_data_ultima_visualizacao.php", true);
 			
 			
 			
@@ -381,12 +381,12 @@ function abrir_info(){
 			xmlHttp.onreadystatechange = handleStateChange;
 			
 			
-			//xmlHttp.open("POST", "https://acheloja.com/m/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", ""+url_servidor+"m/ajax_vitrine_app.php", true);
 			//xmlHttp.open("POST", "http://52.67.44.156/m/ajax_vitrine_app.php", true);
-			//xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_vitrine_app.php", true);
 			
 			
-			xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_chat_app.php", true);
+			xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_chat_app.php", true);
 			
 			
 			
@@ -633,12 +633,12 @@ if( (typeof localStorage[id_usuario_escolhido] !== "undefined") || ( localStorag
 			xmlHttp.onreadystatechange = handleStateChange_chat_atualiza;
 			
 			
-			//xmlHttp.open("POST", "https://acheloja.com/m/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", ""+url_servidor+"m/ajax_vitrine_app.php", true);
 			//xmlHttp.open("POST", "http://52.67.44.156/m/ajax_vitrine_app.php", true);
-			//xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_vitrine_app.php", true);
 			
 			
-			xmlHttp.open("POST", "https://acheloja.com/sistematize/ajax_chat_app_atualiza.php", true);
+			xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_chat_app_atualiza.php", true);
 			
 			
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -927,7 +927,7 @@ function enviar(){
 			
 
 			
-			xmlHttp4.open("POST", "https://acheloja.com/sistematize/ajax_chat_app_atualiza_ultima_visualizacao.php", true);
+			xmlHttp4.open("POST", ""+url_servidor+"sistematize/ajax_chat_app_atualiza_ultima_visualizacao.php", true);
 			
 			
 			
@@ -995,7 +995,7 @@ function enviar(){
 			xmlHttp2.onreadystatechange = handleStateChange_dados_usuario_chat;
 			
 			
-			xmlHttp2.open("POST", "https://acheloja.com/sistematize/ajax_foto_nome_usuario_chat.php", true);
+			xmlHttp2.open("POST", ""+url_servidor+"sistematize/ajax_foto_nome_usuario_chat.php", true);
 			
 			xmlHttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
