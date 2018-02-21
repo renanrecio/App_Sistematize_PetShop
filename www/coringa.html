@@ -57,7 +57,7 @@
 					createXMLHttpRequest_visualizacao_produtos();
 					xmlHttp.onreadystatechange = handleStateChange_visualizacao_produtos;
 					
-					xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/cliques_ajax.php", true);
+					xmlHttp.open("POST", "https://acheloja.com/validar/cliques_ajax.php", true);
 					xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 					
 					xmlHttp.send("id="+id+"&tipo=visualizacao_produto");
@@ -96,7 +96,7 @@
 		
 		<div id="msg_sem_lojas"	style="position: absolute; top:0%; left:0%; width:100%; height:120%; visibility: hidden;" >
 		
-			<img src="http://54.207.38.125/AcheLoja2.0/fotos/passo_a_passo_mobile.png"  style=" position:absolute; top:4em; background-color: #0054a6; width:80%; left:10%;" /> 
+			<img src="https://acheloja.com/fotos/passo_a_passo_mobile.png"  style=" position:absolute; top:4em; background-color: #0054a6; width:80%; left:10%;" /> 
 				
 		</div>
 		
@@ -174,7 +174,7 @@
 					xmlHttp.onreadystatechange = handleStateChange;
 					
 					
-					xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/m/ajax_vitrines_favoritas_app.php", true);
+					xmlHttp.open("POST", "https://acheloja.com/m/ajax_vitrines_favoritas_app.php", true);
 					xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 					
 					xmlHttp.send("contador_geral=" + document.getElementById("contador_geral").value  + "&contador_geral_prod1=" + document.getElementById("contador_geral_prod1").value  + "&contador=" + document.getElementById("contador").value + "&top=" + document.getElementById("top").value + "&left=" + document.getElementById("left").value + "&id_usuario="+ localStorage.id_usuario +"&tem_loja_na_cidade=1");
@@ -269,7 +269,7 @@
 							createXMLHttpRequest_visualizar_vitrine();
 							xmlHttp.onreadystatechange = handleStateChange_visualizar_vitrine;
 							
-							xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/atualizar_visualizacao_minhas_vitrine.php", true);
+							xmlHttp.open("POST", "https://acheloja.com/validar/atualizar_visualizacao_minhas_vitrine.php", true);
 							xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 							
 							xmlHttp.send("id_usuario="+localStorage.id_usuario+"");
