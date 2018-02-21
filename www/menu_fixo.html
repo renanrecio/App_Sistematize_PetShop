@@ -153,8 +153,8 @@ document.getElementById("nome_usuario").innerHTML = nome_menu;
 					createXMLHttpRequest_abrir_novidades();
 					xmlHttp2.onreadystatechange = handleStateChange_abrir_novidades;
 					
-					//xmlHttp2.open("POST", ""+url_servidor+"validar/abrir_novidades.php", true);
-					xmlHttp2.open("POST", ""+url_servidor+"sistematize/validar/abrir_novidades.php", true);
+					//xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/abrir_novidades.php", true);
+					xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/validar/abrir_novidades.php", true);
 					
 					
 					xmlHttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -190,9 +190,9 @@ document.getElementById("nome_usuario").innerHTML = nome_menu;
 					createXMLHttpRequest_novidades();
 					xmlHttp2.onreadystatechange = handleStateChange_novidades;
 					
-					//xmlHttp2.open("POST", ""+url_servidor+"m/ajax_novidades_usuario_app.php", true);
-					//xmlHttp2.open("POST", ""+url_servidor+"sistematize/ajax_novidades_usuario_app.php", true);
-					xmlHttp2.open("POST", ""+url_servidor+"sistematize/ajax_novidades_usuario_app.php", true);
+					//xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/m/ajax_novidades_usuario_app.php", true);
+					//xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_novidades_usuario_app.php", true);
+					xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_novidades_usuario_app.php", true);
 					
 					
 					xmlHttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -257,9 +257,9 @@ document.getElementById("nome_usuario").innerHTML = nome_menu;
 					createXMLHttpRequest_novas_msgs_chat();
 					xmlHttp3.onreadystatechange = handleStateChange_novas_msgs_chat;
 					
-					//xmlHttp3.open("POST", ""+url_servidor+"m/ajax_novidades_usuario_app.php", true);
-					//xmlHttp3.open("POST", ""+url_servidor+"sistematize/ajax_novidades_usuario_app.php", true);
-					xmlHttp3.open("POST", ""+url_servidor+"sistematize/ajax_novas_msgs_chat.php", true);
+					//xmlHttp3.open("POST", "http://54.207.38.125/AcheLoja2.0/m/ajax_novidades_usuario_app.php", true);
+					//xmlHttp3.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_novidades_usuario_app.php", true);
+					xmlHttp3.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_novas_msgs_chat.php", true);
 					
 					
 					xmlHttp3.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -396,7 +396,7 @@ function recarregar_iframe(){
 			createXMLHttpRequest_clique_produtos();
 			xmlHttp2.onreadystatechange = handleStateChange_clique_produtos;
 			
-			xmlHttp2.open("POST", ""+url_servidor+"validar/cliques_ajax.php", true);
+			xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/cliques_ajax.php", true);
 			xmlHttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
 			//xmlHttp2.send("id="+id+"&tipo=clique_produto");
@@ -440,7 +440,7 @@ function recarregar_iframe(){
 					createXMLHttpRequest_visualizacao_produtos();
 					xmlHttp2.onreadystatechange = handleStateChange_visualizacao_produtos;
 					
-					xmlHttp2.open("POST", ""+url_servidor+"validar/cliques_ajax.php", true);
+					xmlHttp2.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/cliques_ajax.php", true);
 					xmlHttp2.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 					
 					xmlHttp2.send("id="+id+"&tipo=visualizacao_produto");
@@ -748,9 +748,9 @@ function setupPush() {
 			xmlHttp3.onreadystatechange = handleStateChange_versao_app;
 			
 			
-			//xmlHttp.open("POST", ""+url_servidor+"m/login_app.php", true);
+			//xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/m/login_app.php", true);
 			
-			xmlHttp3.open("POST", ""+url_servidor+"sistematize/ajax_versao_app.php", true);
+			xmlHttp3.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_versao_app.php", true);
 			
 			
 			

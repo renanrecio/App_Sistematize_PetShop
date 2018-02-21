@@ -149,12 +149,12 @@ var id_loja = '87';
 			xmlHttp.onreadystatechange = handleStateChange;
 			
 			
-			//xmlHttp.open("POST", ""+url_servidor+"m/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/m/ajax_vitrine_app.php", true);
 			//xmlHttp.open("POST", "http://52.67.44.156/m/ajax_vitrine_app.php", true);
-			//xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_vitrine_app.php", true);
+			//xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_vitrine_app.php", true);
 			
 			
-			xmlHttp.open("POST", ""+url_servidor+"sistematize/ajax_buscar_produtos.php", true);
+			xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/sistematize/ajax_buscar_produtos.php", true);
 			
 			
 			
@@ -254,7 +254,7 @@ var id_loja = '87';
 					createXMLHttpRequest_deixar_de_seguir();
 					xmlHttp.onreadystatechange = handleStateChange_deixar_de_seguir;
 					
-					xmlHttp.open("POST", ""+url_servidor+"validar/deixar_de_seguir.php", true);
+					xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/deixar_de_seguir.php", true);
 					xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 					
 					xmlHttp.send("id_usuario="+id_usuario+"&id_anuncio="+id_anuncio);
@@ -293,7 +293,7 @@ var id_loja = '87';
 			createXMLHttpRequest_comecar_seguir();
 			xmlHttp.onreadystatechange = handleStateChange_comecar_seguir;
 			
-			xmlHttp.open("POST", ""+url_servidor+"validar/comecar_seguir.php", true);
+			xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/comecar_seguir.php", true);
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
 			xmlHttp.send("id_usuario="+id_usuario+"&id_anuncio="+id_anuncio);
@@ -330,7 +330,7 @@ var id_loja = '87';
 			createXMLHttpRequest_novos_seguidores();
 			xmlHttp.onreadystatechange = handleStateChange_novos_seguidores;
 			
-			xmlHttp.open("POST", ""+url_servidor+"validar/cliques_ajax.php", true);
+			xmlHttp.open("POST", "http://54.207.38.125/AcheLoja2.0/validar/cliques_ajax.php", true);
 			xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			
 			xmlHttp.send("id="+id+"&tipo=novos_seguidores");
