@@ -1,7 +1,7 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sistematizepetshop" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.petshopsistematize" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>PetShop - Sistematize</name>
-    <description> Sistematize com Apps</description>
+    <description>Sistematize com Apps</description>
     <author email="sistematize@gmail.com" href="http://sistematize.com">
         Grupo RSR
     </author>
